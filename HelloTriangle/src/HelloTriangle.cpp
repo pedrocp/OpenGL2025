@@ -37,9 +37,10 @@ int main(void)
         return -1;
     }
 
-    application.Setup();
     /* Make the window's context current */
     glfwSetKeyCallback(window, checkKeyboard);
+
+    application.Setup();
 
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))

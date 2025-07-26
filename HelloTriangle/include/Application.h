@@ -9,6 +9,10 @@ private:
 	std::map<std::string, GLuint> geometry;
 	void SetupShaders();
 	void SetupGeometry();
+	void SetupGeometrySingleArray();
+
+	float time{0.0f};
+	GLuint timeID;
 public:
 	void Setup();
 	void Update();
