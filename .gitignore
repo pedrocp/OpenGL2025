@@ -40,5 +40,8 @@
 # debug information files
 *.dwo
 
-# visual studio temporary folder
+# visual studio temporary folders
 .vs
+Debug
+Release
+x64
