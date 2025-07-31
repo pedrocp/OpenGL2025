@@ -46,5 +46,11 @@
     <None Include="Shaders\vertexPassthru.glsl">
       <Filter>Shaders</Filter>
     </None>
+    <None Include="Shaders\vertexTrans.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\fragmentTrans.glsl">
+      <Filter>Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>
