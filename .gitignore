@@ -45,3 +45,5 @@
 Debug
 Release
 x64
+*.log
+*.recipe
