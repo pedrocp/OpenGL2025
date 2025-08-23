@@ -1,4 +1,6 @@
-#pragma once
+#ifndef __OBJECT3D_H__
+#define __OBJECT3D_H__
+
 #include "glad.h"
 #include <iostream>
 #include "glm/glm.hpp"
@@ -22,3 +24,5 @@ public:
 	//Object3D();
 
 };
+
+#endif //__OBJECT3D_H__
