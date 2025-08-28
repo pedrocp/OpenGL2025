@@ -145,6 +145,10 @@
     <ClCompile Include="src\ShaderFuncs.cpp" />
     <ClCompile Include="src\TextureMain.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\fragmentTexture.glsl" />
+    <None Include="shaders\vertexTexture.glsl" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

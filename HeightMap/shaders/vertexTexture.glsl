@@ -13,7 +13,7 @@ uniform mat4 projection;
 uniform mat4 acumTrans;
 uniform float frecuency;
 uniform float amplitude;
-
+uniform sampler2D height;
 
 float F(float x, float z, float amplitude, float phase, float frecuency)
 {
@@ -23,12 +23,11 @@ float F(float x, float z, float amplitude, float phase, float frecuency)
 void main()
 {
 	vec4 newPosition = vPosition;
-	float f = F(newPosition.x, newPosition.z, amplitude, time, frecuency);
-	newPosition.y = f;
 
-	color = vec4(1.0, 1.0, 1.0, 1.0);
-
+	vec4 color = texture(height, vTextCoord);
+	newPosition.y = 0.3 * (0.2126 * color.r + 0.7152 * color.g + 0.0722 * color.b);
 	texCoord = vTextCoord;
+
 	gl_Position = 
 		projection * 
 		camera * 

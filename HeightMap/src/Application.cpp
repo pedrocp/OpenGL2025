@@ -33,7 +33,8 @@ void Application::SetupShaderTransforms()
 	uniforms["time"] = glGetUniformLocation(shaders["transforms"], "time");
 	uniforms["frecuency"] = glGetUniformLocation(shaders["transforms"], "frecuency");
 	uniforms["amplitude"] = glGetUniformLocation(shaders["transforms"], "amplitude");
-	uniforms["tex0"] = glGetUniformLocation(shaders["transforms"], "tex0");
+	uniforms["diffuse"] = glGetUniformLocation(shaders["transforms"], "diffuse");
+	uniforms["height"] = glGetUniformLocation(shaders["transforms"], "height");
 }
 
 void Application::SetupShaders() 
@@ -189,12 +190,13 @@ void Application::Setup()
 	//SetupGeometry();
 	//SetupGeometrySingleArray();
 	SetupPlane();
-	textures["lenna"] = SetupTexture("Textures/Lenna512x512.png");
+	textures["height"] = SetupTexture("Textures/Grand Mountain Height Map Shared/Height Map PNG.png");
+	textures["diffuse"] = SetupTexture("Textures/Grand Mountain Height Map Shared/Diffuse Map PNG.png");
 
 	//inicializar camara
-	eye = glm::vec3(0.0f, 0.0f, 150.0f);
+	eye = glm::vec3(0.0f, 0.0f, 3.0f);
 	center = glm::vec3(0.0f, 0.0f, 1.0f);
-	projection = glm::perspective(glm::radians(45.0f), (640.0f / 480.0f), 0.1f, 200.0f);
+	projection = glm::perspective(glm::radians(45.0f), (1920.0f / 1080.0f), 0.1f, 200.0f);
 	accumTrans = glm::rotate(
 		glm::mat4(1.0f),
 		glm::radians(45.0f),
@@ -230,10 +232,16 @@ void Application::Draw()
 	glUniformMatrix4fv(uniforms["accumTrans"], 1, GL_FALSE, glm::value_ptr(accumTrans));
 
 	//Seleccionar las texturas
-	//texture0
-	glBindTexture(GL_TEXTURE_2D, textures["lenna"]);
-	glUniform1i(uniforms["tex0"], 0);
+	// Activar y enlazar la primera textura
 	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, textures["height"]);
+	glUniform1i(uniforms["height"], 0);
+
+	// Activar y enlazar la segunda textura
+	glActiveTexture(GL_TEXTURE1);
+	glBindTexture(GL_TEXTURE_2D, textures["diffuse"]);
+	glUniform1i(uniforms["diffuse"], 1);
+
 
 	//Seleccionar la geometria (el triangulo)
 	//glBindVertexArray(geometry["triangulo"]);

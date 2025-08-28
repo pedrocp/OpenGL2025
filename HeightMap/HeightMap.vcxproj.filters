@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="shaders">
+      <UniqueIdentifier>{47e6b9e6-8dbf-4ed4-adda-879a4e9df5aa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Application.h">
@@ -44,5 +47,13 @@
     <ClCompile Include="src\TextureMain.cpp">
       <Filter>Archivos de recursos</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\fragmentTexture.glsl">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\vertexTexture.glsl">
+      <Filter>shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

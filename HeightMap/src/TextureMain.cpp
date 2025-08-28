@@ -18,7 +18,7 @@ int main(void)
         return -1;
 
     /* Create a windowed mode window and its OpenGL context */
-    application.window = glfwCreateWindow(1024, 768, "Texture", NULL, NULL);
+    application.window = glfwCreateWindow(1920, 1080, "HeightMap", NULL, NULL);
     if (!application.window)
     {
         glfwTerminate();

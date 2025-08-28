@@ -17,7 +17,7 @@ side(0)
 
 void Plane::createPlane(int side)
 {
-	float gs = 100.0; //geometry size (longitud total del plano)
+	float gs = 2.0; //geometry size (longitud total del plano)
 	this->side = side;
 	int TS = 2 * 3 * 2;	//2 triangulos de 3 vertices con 2 coords 
 	int VS = 2 * 3 * 4; //2 triangulos de 3 vertices con 4 coords 
